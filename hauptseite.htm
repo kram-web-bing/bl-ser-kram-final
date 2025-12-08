@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bläser kram</title>
+    <link rel="stylesheet" href="haupt.css" />
+    <meta name="robots" content="noindex, noimageindex" />
+<link rel="icon" type="image/png" href="BL.ico">
+  </head>
+  <body>
+    <h1>Was möchtest du sehen?</h1>
+
+    <button
+      class="bläserblatt"
+      onclick="window.location.href = 'bläserblatt.htm'                              "
+    >
+      Bläserblatt
+    </button>
+
+    <p>Oder das:</p>
+    <button class="bläserTV" onclick="window.location.href = 'BläserTV.htm'">
+      BläserTV
+    </button>
+    <p>Das ist auch cool:</p>
+    <button
+      class="Bläser_TV_Studios"
+      onclick="window.location.href = 'Bläser_TV_Studios.htm'"
+    >
+      Bläser TV Studios
+    </button>
+    <p>Bei Bugs:</p>
+   
+<div class="button-container">
+    <button  class="Bugsuport" onclick="window.location.href = 'Bugsuport.htm'" id="meinButton">
+           Bugsupoprt und Idee
+    </button>
+    <span id="notificationBadge" class="badge active"></span>
+</div>
+
+
+    <p>Du möchtest mit machen?:</p>
+    <button class="Du" onclick="window.location.href = 'Du.htm'">
+      Wir suchen dich!
+    </button>
+
+    <h2>News</h2>
+
+    <style>
+      h4 {
+        color: brown;
+      }
+ 
+
+      .list {
+        width: 300px;
+        height: 350px;
+      }
+
+      .r{
+        color: red;
+
+      }
+
+
+    </style>
+
+    <h4>❗Wir brauchen dich❗</h4>
+    <p>
+      Wir alls Klasse sammeln mumentan Unterschriften das wir in der 7. nicht
+      aufgeteilt werden:
+    </p>
+    <img class="list" src="liste.webp" loading="lazy" />
+    <p>Wer darf Unterschreiben?</p>
+    <p class="r">Jeder</p>
+    <p>Wie kann man unterschreiben?</p>
+    <p class="r">Wir haben Zettel verteilen wo ihr unterschreiben können.</p>
+
+    <button
+      onclick="document.location='https://www.youtube.com/watch?v=xvFZjo5PgG0&list=R'"
+    >
+      Geheimnis
+    </button>
+  
+  <br>
+  <br>
+  <br>
+<br><br>
+  </body>
+
+
+  <script>document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('meinButton');
+    const badge = document.getElementById('notificationBadge');
+    const storageKey = 'bugsupport_read'; // Ein eindeutiger Schlüssel für den Speicher
+
+    // A. PRÜFEN beim Laden der Seite
+    // Wird ausgeführt, BEVOR der Benutzer klickt.
+    // Wenn der Status im Speicher 'true' ist, blende den Punkt aus.
+    if (localStorage.getItem(storageKey) === 'true') {
+        badge.classList.remove('active');
+    }
+    
+    // B. AKTION beim Klicken auf den Button
+    button.addEventListener('click', function() {
+        // 1. Status speichern: Setze den Wert auf 'true', um zu zeigen, dass gelesen wurde.
+        localStorage.setItem(storageKey, 'true');
+        
+        // 2. Punkt sofort ausblenden, falls er gerade aktiv war
+        if (badge.classList.contains('active')) {
+            badge.classList.remove('active');
+        }
+        
+        // 3. Weiterleitung zur neuen Seite
+        window.location.href = 'Bugsuport.htm';
+    });
+});</script>
+</html>
