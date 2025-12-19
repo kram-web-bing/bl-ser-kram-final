@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.button-container {
+    /* Wichtig: Erstellt einen Positionierungskontext für das Badge */
+    position: relative; 
+    display: inline-block; /* Sorgt dafür, dass der Container nur so breit ist wie der Inhalt */
+}
+
+.badge {
+    /* Positionierung des Punktes relativ zum Container */
+    position: absolute; 
+    top: -5px;          /* Verschiebt den Punkt etwas über den oberen Rand */
+    right: -5px;        /* Verschiebt den Punkt etwas über den rechten Rand */
+    
+    /* Aussehen des Punktes */
+    width: 10px;        
+    height: 10px;       
+    border-radius: 50%; /* Macht das Element kreisförmig */
+    background-color: red; 
+    border: 2px solid white; /* Optional: Weißer Rand für bessere Sichtbarkeit */
+
+    /* Standardmäßig versteckt */
+    display: none;
+}
+
+.badge.active {
+    /* Nur wenn die Klasse 'active' gesetzt ist, wird der Punkt angezeigt */
+    display: block; 
+}
+
+/* Optional: Styling für den Button */
+#meinButton {
+    padding: 10px 20px;
+    font-size: 16px;
+}</style>
+</head>
+<body>
+    <div class="button-container">
+    <button id="meinButton">
+        Mein Button
+    </button>
+    <span id="notificationBadge" class="badge active"></span>
+</div>
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('meinButton');
+    const badge = document.getElementById('notificationBadge');
+
+    // Funktion, die ausgeführt wird, wenn der Button geklickt wird
+    button.addEventListener('click', function() {
+        // Überprüfen, ob der Punkt sichtbar (active) ist
+        if (badge.classList.contains('active')) {
+            // Wenn ja, entfernen wir die Klasse 'active' und verstecken den Punkt
+            badge.classList.remove('active');
+            
+            // Optional: Hier könnten Sie den Benutzer über die "Neuheit" informieren oder eine Aktion auslösen
+            alert('Neue Funktion/Nachricht wurde gelesen!');
+        }
+        
+        // Führen Sie hier die eigentliche Button-Aktion aus (z.B. Navigation)
+    });
+});</script>
+</body>
+</html>
