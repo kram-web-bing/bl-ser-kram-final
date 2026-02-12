@@ -12,6 +12,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
+     a:hover {
+    color: #00bcd4;
+    cursor: pointer; /* Damit die Hand als Mauszeiger erscheint */
+}
+
 header {
   text-align: center;
   margin-bottom: 20px;
@@ -163,6 +168,7 @@ border-radius: 5000px;
     padding: 10px 20px;
     font-size: 16px;
 }
+
 
 
 
