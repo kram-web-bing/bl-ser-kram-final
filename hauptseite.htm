@@ -14,7 +14,10 @@
 
   </head>
   <body>
-    <h1>Was möchtest du sehen?</h1>
+        <div class="splash-container">
+    <h1 id="main-title">Bläser kram</h1>
+    <div id="splash">Made withe Love</div>
+</div>
 
      <p>Bei Bugs:</p>
   <div class="button-container">
@@ -63,7 +66,37 @@
       }
 
 
+.splash-container {
+    position: relative;
+    display: inline-block;
+}
 
+#splash {
+    color: #ffff00; /* Minecraft Gelb */
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #3f3f00; /* Dunkler Schatten für Lesbarkeit */
+    font-family: 'Courier New', Courier, monospace; /* Pixeliger Look */
+    position: absolute;
+    top: 30px; /* Position anpassen */
+    right: -50px;
+    transform: rotate(-20deg);
+    font-size: 1.2rem;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none; /* Man kann durch den Text klicken */
+    
+    /* Die Animation */
+    animation: splash-anim 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes splash-anim {
+    from {
+        transform: rotate(-20deg) scale(1);
+    }
+    to {
+        transform: rotate(-20deg) scale(1.1);
+    }
+}
 
  
     </style>
@@ -90,7 +123,21 @@
   <br>
 <br><br>
   </body>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const splashes = [
+        "Pumpt wie Minecraft!",
+        "Jetzt mit Bugsupport!",
+        "Bläserblatt ist da!",
+        "Unterschreibt die Liste!",
+        "Geheimnis inklusive!",
+        "Besser als die 7. Klasse!",
+        "100% Bläser-Power!"
+    ];
 
+    const splashElement = document.getElementById('splash');
+    const randomIndex = Math.floor(Math.random() * splashes.length);
+    splashElement.innerText = splashes[randomIndex];
+});</script>
 
   <script>document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('meinButton');
@@ -119,6 +166,7 @@
     });
 });</script>
 </html>
+
 
 
 
