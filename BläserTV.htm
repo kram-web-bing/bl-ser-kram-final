@@ -1,74 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <link rel="icon" type="image/png" href="BL.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bläser TV</title>
+    <link rel="icon" type="image/png" href="BL.ico">
     <link rel="stylesheet" href="haupt.css">
+    
+    <style>
+        h1 { color: #00d4ff; font-family: Arial, sans-serif; } 
+        
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-<style>h1{color: blue;} 
+        .z-text {
+            color: white;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
 
-div{
-display: flex;
-justify-content: center;}
+        img {
+            width: 400px;
+            border-radius: 15px;
+            border: 2px solid #00d4ff;
+            margin: 20px 0;
+        }
 
-.z{
-    margin-left: 100px;
-}
+        /* Falls deine haupt.css den Hintergrund dunkel macht, 
+           sorgen wir hier dafür, dass man den Text sieht */
+        body {
+            background-color: #1a1a2e; /* Dunkelblau passend zu deinem Design */
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+    </style>
+</head>
 
-
-
-
-<marquee>
-
-    <h1>Das Bläser TV </h1>
+<body>
+    <marquee>
+        <h1>📺 Das Bläser TV 📺</h1>
     </marquee>
-    <marquee behavior="" direction="right">
-    <p>Made by Matteo</p>
-</marquee>
+    
+    <marquee behavior="scroll" direction="right">
+        <p style="color: yellow; font-weight: bold;">Made by Matteo</p>
+    </marquee>
 
-<div>
-<h1 class="z">Über uns:</h1>
-</div> 
-<div>
-<p class="z">Das Bläser TV wurde anfang des Jahres 2025 von Matteo gegründed,
-<br> doch war Nelson  auch von anfang an dabei als Cutter und <br> Später 
-kammen dan noch Paul S., Luise, Noel und August dazu.
+    <div class="flex-container">
+        <h1>Über uns:</h1>
+        
+        <p class="z-text">
+            Das Bläser TV wurde Anfang des Jahres 2025 von Matteo gegründet,<br> 
+            doch war Nelson auch von Anfang an dabei als Cutter.<br> 
+            Später kamen dann noch Paul S., Luise, Noel und August dazu.
+        </p>
 
-</p>
-</div>
+        <img src="Bläser TV.jpg" alt="Bläser TV Team">
 
-<div>
-<img class="z" src="Bläser TV.jpg">
-</div>
-
-
-<br>
-<div>
-<button class="Du" onclick="window.location.href = 'hauptseite.htm'">
-    Zurück
-    </button>
-</div>
-
-<style>
-img{
-width: 400px;
-
-
-}
-div{
-display: flex;
-justify-content: center;
-
-}
-
-</style>
-
+        <br>
+        
+        <button class="Du" onclick="window.location.href = 'hauptseite.htm'" style="cursor: pointer; padding: 10px 20px;">
+            Zurück zur Hauptseite
+        </button>
+    </div>
 
 </body>
-
-  <link rel="stylesheet" href="style.css">
-
 </html>
-
